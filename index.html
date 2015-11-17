@@ -30,19 +30,22 @@
     }
     }
   
+  function hover(){$('tr').mouseenter(function(){
+  $(this).css('background-color', 'yellow')
+})
+
+$('tr').mouseleave(function(){
+  $(this).css('background-color', 'white')
+})
+}
+
+  
   if(valid){
     $('.button').click(function(){
       $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
+      hover()
       
-      $('tr').mouseenter(function(){
-        $(this).css('background-color', 'yellow')
-      })
-
-    $('tr').mouseleave(function(){
-     $(this).css('background-color', 'white')
-    })
-    })
-  }
+  )}
   
   
     if (valid) {
