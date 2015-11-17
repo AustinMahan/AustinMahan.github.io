@@ -12,6 +12,9 @@ $('tr').mouseleave(function(){
 }
 hover()
 
+if(valid){
+  hover()
+}
 
 function editTable(){$("td").dblclick(function () {
   var OriginalContent = $(this).text();
