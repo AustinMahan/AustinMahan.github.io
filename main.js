@@ -11,8 +11,10 @@ $('tr').mouseleave(function(){
 })
 }
 hover()
-
-
+$('.button').click(function(){
+  $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
+hover()
+})
 
 function editTable(){$("td").dblclick(function () {
   var OriginalContent = $(this).text();
