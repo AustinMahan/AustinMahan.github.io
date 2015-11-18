@@ -30,9 +30,22 @@ break;
 }
 }
 
-if (valid) {
-alert ("Login was successful");
-$("td").dblclick(function () {
+
+function hover(){$('tr').mouseenter(function(){
+  $(this).css('background-color', 'yellow')
+})
+
+$('tr').mouseleave(function(){
+  $(this).css('background-color', 'white')
+})
+}
+function addStudent(){$('.button').click(function(){
+  $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
+hover()
+})
+}
+
+function editTable(){$("td").dblclick(function () {
 var OriginalContent = $(this).text();
 $(this).addClass("cellEditing");
 $(this).html("<input type='text' value='" + OriginalContent + "' />");
@@ -44,6 +57,12 @@ $(this).children().first().blur(function(){ $(this).parent().text(OriginalConten
 $(this).parent().removeClass("cellEditing");
 });
 });
+}
+
+if (valid) {
+alert ("Login was successful");
+editTable()
+hover()
 return false;
 }
 
