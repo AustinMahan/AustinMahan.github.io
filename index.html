@@ -33,6 +33,7 @@ break;
 
 function hover(){$('tr').mouseenter(function(){
   $(this).css('background-color', 'yellow')
+  $(this).append('<td>X</td>')
 })
 
 $('tr').mouseleave(function(){
