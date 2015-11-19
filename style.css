@@ -34,7 +34,17 @@ font-weight: bold;
   float: left;
 }
 
+.deleteRow{
+  background-color: red;
+  visibility: hidden;
+}
+
+
 .table .cellEditing input[type=text]{
   width: 50%;
   float: left;
+}
+
+.exit{
+  background-color: red;
 }
