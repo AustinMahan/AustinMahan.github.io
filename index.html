@@ -15,10 +15,24 @@
 
 
 var count = 2;
+var valid = false;
+
+
+function removeRow(){
+$('.deleteRow').click(function(){
+  $(this).parent().remove()
+})
+}
+
+
+
+
+
+
 function validate() {
 var un = document.myform.username.value;
 var pw = document.myform.pword.value;
-var valid = false;
+
 
 var unArray = ["Austin"];
 var pwArray = ["Password1"];
@@ -30,40 +44,50 @@ break;
 }
 }
 
+function editTable1(){
+    $("td").dblclick(function () {
+    var OriginalContent = $(this).text();
+    $(this).addClass("cellEditing");
+    $(this).html("<input type='text' value='" + OriginalContent + "' />");
+    $(this).children().first().focus();
+    $(this).children().first().keypress(function (e) { if (e.which == 13) { var newContent = $(this).val();
+    $(this).parent().text(newContent); $(this).parent().removeClass("cellEditing");
+    } });
+    $(this).children().first().blur(function(){ $(this).parent().text(OriginalContent);
+    $(this).parent().removeClass("cellEditing");
+    });
+    });
+}
 
 function hover(){$('tr').mouseenter(function(){
   $(this).css('background-color', 'yellow')
-  $(this).child().append('<td>X</td>')
 })
 
 $('tr').mouseleave(function(){
   $(this).css('background-color', 'white')
 })
 }
-function addStudent(){$('.button').click(function(){
-  $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
 hover()
-})
-}
 
-function editTable(){$("td").dblclick(function () {
-var OriginalContent = $(this).text();
-$(this).addClass("cellEditing");
-$(this).html("<input type='text' value='" + OriginalContent + "' />");
-$(this).children().first().focus();
-$(this).children().first().keypress(function (e) { if (e.which == 13) { var newContent = $(this).val();
-$(this).parent().text(newContent); $(this).parent().removeClass("cellEditing");
-} });
-$(this).children().first().blur(function(){ $(this).parent().text(OriginalContent);
-$(this).parent().removeClass("cellEditing");
-});
-});
-}
+ function addStudent(){
+   $('.button').click(function(){
+     $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> <td class="deleteRow">X</td></tr>')
+     hover()
+     editTable1()
+     $('.deleteRow').css('visibility', 'visible')
+     removeRow()
+   })
+
+ }
+
+
 
 if (valid) {
 alert ("Login was successful");
-editTable()
+$('.deleteRow').css('visibility', 'visible')
+editTable1()
 addStudent()
+removeRow()
 return false;
 }
 
@@ -88,6 +112,14 @@ document.myform.pword.disabled = true;
 return false;
 }
 
+
+
+
+
+
+
+
+
 }
 </script>
 
@@ -99,29 +131,28 @@ return false;
 </form>
 
 
-
 <div class="table">
 <table border="1"><div contenteditable="true">
 <tr><th>First Name</th><th>Last Name</th><th>School</th><th>State</th><th>Email</th><th>Grade</th><th>Status</th><th>Amount</th></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
 </div>
 </table>
 
@@ -146,4 +177,3 @@ return false;
 
 </body>
 </html>
-
