@@ -12,6 +12,19 @@
 
 
 <script type = "text/javascript">
+
+
+function hover(){$('tr').mouseenter(function(){
+  $(this).css('background-color', 'yellow')
+})
+$('tr').mouseleave(function(){
+  $(this).css('background-color', 'white')
+})
+}
+hover()
+
+
+
 var count = 2;
 var valid = false;
 function removeRow(){
@@ -44,14 +57,7 @@ function editTable1(){
     });
     });
 }
-function hover(){$('tr').mouseenter(function(){
-  $(this).css('background-color', 'yellow')
-})
-$('tr').mouseleave(function(){
-  $(this).css('background-color', 'white')
-})
-}
-hover()
+
  function addStudent(){
    $('.button').click(function(){
      $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> <td class="deleteRow">X</td></tr>')
