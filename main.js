@@ -61,9 +61,7 @@ function editTable(){$("td").dblclick(function () {
 
 
 
-$(".button").click(function{
-  alert("log in")
-})
+
 
 
 
