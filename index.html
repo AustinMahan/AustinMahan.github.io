@@ -80,9 +80,7 @@ hover()
 
  }
 
-if((!vaild) && ($('.button').click())){
-  alert('Log in first.')
-}
+
 
 
 if (valid) {
@@ -92,6 +90,10 @@ editTable1()
 addStudent()
 removeRow()
 return false;
+}else{
+  $('.button').click(function(){
+    alert('Log in')
+  })
 }
 
 var t = " tries";
