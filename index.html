@@ -37,7 +37,7 @@ var pwArray = ["Password1"];
 for (var i=0; i <unArray.length; i++) {
 if ((un == unArray[i]) && (pw == pwArray[i])) {
 valid = true;
-var test = 1;
+test = 1;
 break;
 }
 }
@@ -98,15 +98,16 @@ document.myform.username.disabled = true;
 document.myform.pword.disabled = true;
 return false;
 }
-}
+
 $('.button').click(function(){
-  if(valid){
+  if(test === 1){
   $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
 hover()
 } else{
   alert('log in!')
 }
 })
+}
 </script>
 
 <form name = "myform">
