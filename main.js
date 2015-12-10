@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
+if(valid === false){
 $('.button').click(function(){
   alert('log in')
 })
-
+}
 
 //
 var un = document.myform.username.value;
