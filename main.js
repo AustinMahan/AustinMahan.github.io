@@ -35,6 +35,11 @@ $('tr').mouseleave(function(){
 }
 hover()
 
+
+$('.button').click(function(){
+  alert('log in')
+})
+
 //
 // $('.button').click(function(){
 //   if(valid){
