@@ -12,7 +12,6 @@
 
 
 <script type = "text/javascript">
-
 var test = 0;
 var count = 2;
 var valid = false;
@@ -21,11 +20,11 @@ $('.deleteRow').click(function(){
   $(this).parent().remove()
 })
 }
-
-
-
-
-
+$('.button').click(function(){
+  if(test = 0){
+    alert("Log in")
+  }
+})
 function validate() {
 var un = document.myform.username.value;
 var pw = document.myform.pword.value;
@@ -38,8 +37,6 @@ var test = 1;
 break;
 }
 }
-
-
 function editTable1(){
     $("td").dblclick(function () {
     var OriginalContent = $(this).text();
