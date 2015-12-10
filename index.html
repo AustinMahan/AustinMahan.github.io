@@ -99,6 +99,14 @@ document.myform.pword.disabled = true;
 return false;
 }
 }
+$(document).ready(function(){
+
+if(valid === false){
+$('.button').click(function(){
+  alert('log in')
+})
+}
+});
 </script>
 
 <form name = "myform">
