@@ -12,6 +12,7 @@
 
 
 <script type = "text/javascript">
+var test = 0;
 var count = 2;
 var valid = false;
 function removeRow(){
@@ -19,6 +20,15 @@ $('.deleteRow').click(function(){
   $(this).parent().remove()
 })
 }
+ 
+    $('.button').click(function(){
+       if(test === 0){
+      alert("Log in")
+       }
+    })
+    
+  
+  
 function validate() {
 var un = document.myform.username.value;
 var pw = document.myform.pword.value;
@@ -27,6 +37,7 @@ var pwArray = ["Password1"];
 for (var i=0; i <unArray.length; i++) {
 if ((un == unArray[i]) && (pw == pwArray[i])) {
 valid = true;
+var test = 1;
 break;
 }
 }
@@ -88,6 +99,14 @@ document.myform.pword.disabled = true;
 return false;
 }
 }
+$('.button').click(function(){
+  if(valid){
+  $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
+hover()
+} else{
+  alert('log in!')
+}
+})
 </script>
 
 <form name = "myform">
