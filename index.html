@@ -19,6 +19,11 @@ $('.deleteRow').click(function(){
   $(this).parent().remove()
 })
 }
+
+function removeIns(){
+  $('.ins').remove()
+}
+
 function validate() {
 var un = document.myform.username.value;
 var pw = document.myform.pword.value;
@@ -30,6 +35,8 @@ valid = true;
 break;
 }
 }
+
+
 function editTable1(){
     $("td").dblclick(function () {
     var OriginalContent = $(this).text();
@@ -67,6 +74,7 @@ $('.deleteRow').css('visibility', 'visible')
 editTable1()
 addStudent()
 removeRow()
+removeIns()
 return false;
 }
 var t = " tries";
