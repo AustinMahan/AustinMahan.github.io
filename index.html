@@ -12,7 +12,6 @@
 
 
 <script type = "text/javascript">
-
 var count = 2;
 var valid = false;
 function removeRow(){
@@ -20,14 +19,7 @@ $('.deleteRow').click(function(){
   $(this).parent().remove()
 })
 }
- 
-   
-    
- 
- 
-  
 function validate() {
-  var test = 0;
 var un = document.myform.username.value;
 var pw = document.myform.pword.value;
 var unArray = ["Austin"];
@@ -35,7 +27,6 @@ var pwArray = ["Password1"];
 for (var i=0; i <unArray.length; i++) {
 if ((un == unArray[i]) && (pw == pwArray[i])) {
 valid = true;
-test = 1;
 break;
 }
 }
@@ -61,15 +52,15 @@ $('tr').mouseleave(function(){
 })
 }
 hover()
-function addStudent(){
-  $('.button').click(function(){
-    $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> <td class="deleteRow">X</td></tr>')
-    hover()
-    editTable1()
-    $('.deleteRow').css('visibility', 'visible')
-    removeRow()
-  })
-}
+ function addStudent(){
+   $('.button').click(function(){
+     $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> <td class="deleteRow">X</td></tr>')
+     hover()
+     editTable1()
+     $('.deleteRow').css('visibility', 'visible')
+     removeRow()
+   })
+ }
 if (valid) {
 alert ("Login was successful");
 $('.deleteRow').css('visibility', 'visible')
@@ -96,8 +87,6 @@ document.myform.username.disabled = true;
 document.myform.pword.disabled = true;
 return false;
 }
-
-
 }
 </script>
 
