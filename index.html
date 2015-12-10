@@ -12,7 +12,7 @@
 
 
 <script type = "text/javascript">
-var test = 0;
+
 var count = 2;
 var valid = false;
 function removeRow(){
@@ -30,6 +30,7 @@ $('.deleteRow').click(function(){
   
   
 function validate() {
+  var test = 0;
 var un = document.myform.username.value;
 var pw = document.myform.pword.value;
 var unArray = ["Austin"];
@@ -100,7 +101,7 @@ return false;
 }
 
 $('.button').click(function(){
-  if(valid){
+  if(test === 1){
   $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
 hover()
 } else{
