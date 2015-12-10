@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+$('.button').click(function(){
+  alert('log in')
+})
+
 
 //
 var un = document.myform.username.value;
@@ -36,9 +40,7 @@ $('tr').mouseleave(function(){
 hover()
 
 
-$('.button').click(function(){
-  alert('log in')
-})
+
 
 //
 // $('.button').click(function(){
