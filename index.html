@@ -27,14 +27,15 @@ $('.deleteRow').click(function(){
        }
     })
     
-  $('.button').click(function(){
-  if(test === 1){
-  $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
-hover()
-} else{
+  $(document).ready(function(){
+     $('.button').click(function(){
+  if(test === 0){
+ 
   alert('log in!')
 }
 })
+  })
+ 
   
 function validate() {
   var test = 0;
