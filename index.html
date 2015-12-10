@@ -27,7 +27,14 @@ $('.deleteRow').click(function(){
        }
     })
     
-  
+  $('.button').click(function(){
+  if(test === 1){
+  $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
+hover()
+} else{
+  alert('log in!')
+}
+})
   
 function validate() {
   var test = 0;
@@ -64,15 +71,15 @@ $('tr').mouseleave(function(){
 })
 }
 hover()
- function addStudent(){
-   $('.button').click(function(){
-     $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> <td class="deleteRow">X</td></tr>')
-     hover()
-     editTable1()
-     $('.deleteRow').css('visibility', 'visible')
-     removeRow()
-   })
- }
+function addStudent(){
+  $('.button').click(function(){
+    $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> <td class="deleteRow">X</td></tr>')
+    hover()
+    editTable1()
+    $('.deleteRow').css('visibility', 'visible')
+    removeRow()
+  })
+}
 if (valid) {
 alert ("Login was successful");
 $('.deleteRow').css('visibility', 'visible')
@@ -100,14 +107,7 @@ document.myform.pword.disabled = true;
 return false;
 }
 
-$('.button').click(function(){
-  if(test === 1){
-  $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
-hover()
-} else{
-  alert('log in!')
-}
-})
+
 }
 </script>
 
