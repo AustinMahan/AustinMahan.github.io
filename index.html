@@ -101,11 +101,14 @@ return false;
 }
 $(document).ready(function(){
 
-if(!valid){
 $('.button').click(function(){
-  alert('log in')
-})
+  if(valid){
+  $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> </tr>')
+hover()
+} else{
+  alert('log in!')
 }
+})
 });
 </script>
 
