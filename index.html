@@ -2,28 +2,55 @@
 <html>
 <head>
 <meta charset="utf-8">
+<script src="sorttable.js" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript"></script>
 <title>FBLA</title>
 </head>
 <body>
-
-
 <script type = "text/javascript">
+$(document).ready(function(){
+  $('tr').mouseenter(function(){
+  $(this).css('background-color', 'yellow')
+  })
+
+  $('tr').mouseleave(function(){
+  $(this).css('background-color', 'white')
+  })
+});
+
+
+function searchFunction(){
+var search = document.myform.search.value;
+console.log(search);
+var amountRow = document.getElementById('table1').rows.length;
+console.log(amountRow);
+ for(i=1; i<amountRow; i++){
+
+  document.getElementById('table1').rows[i].cells[0];
+  if(document.getElementById('table1').rows[i].cells[0].innerText == search){
+      $(document.getElementById('table1').rows[i]).css('background-color', 'red')
+    }
+  }
+
+}
+
+
+//might be able to use while loop to count the tr's in a table and add it to the counter.
+//This doesn't work. try making a loop that will loop through the table, using the nth-child(i)
+//you have to first find the length of the table to loop through it. then keep the start of i at 1 to skip the
+//header.then you should be able to highloght the parent to geth the row or just that cell.
 var count = 2;
 var valid = false;
+
 function removeRow(){
 $('.deleteRow').click(function(){
-  $(this).parent().remove()
+$(this).parent().remove()
 })
 }
-
 function removeIns(){
-  
 }
-
 function validate() {
 var un = document.myform.username.value;
 var pw = document.myform.pword.value;
@@ -35,39 +62,37 @@ valid = true;
 break;
 }
 }
-
-
 function editTable1(){
-    $("td").dblclick(function () {
-    var OriginalContent = $(this).text();
-    $(this).addClass("cellEditing");
-    $(this).html("<input type='text' value='" + OriginalContent + "' />");
-    $(this).children().first().focus();
-    $(this).children().first().keypress(function (e) { if (e.which == 13) { var newContent = $(this).val();
-    $(this).parent().text(newContent); $(this).parent().removeClass("cellEditing");
-    } });
-    $(this).children().first().blur(function(){ $(this).parent().text(OriginalContent);
-    $(this).parent().removeClass("cellEditing");
-    });
-    });
+$("td").dblclick(function () {
+var OriginalContent = $(this).text();
+$(this).addClass("cellEditing");
+$(this).html("<input type='text' value='" + OriginalContent + "' />");
+$(this).children().first().focus();
+$(this).children().first().keypress(function (e) { if (e.which == 13) { var newContent = $(this).val();
+$(this).parent().text(newContent); $(this).parent().removeClass("cellEditing");
+} });
+$(this).children().first().blur(function(){ $(this).parent().text(OriginalContent);
+$(this).parent().removeClass("cellEditing");
+});
+});
 }
 function hover(){$('tr').mouseenter(function(){
-  $(this).css('background-color', 'yellow')
+$(this).css('background-color', 'yellow')
 })
 $('tr').mouseleave(function(){
-  $(this).css('background-color', 'white')
+$(this).css('background-color', 'white')
 })
 }
 hover()
- function addStudent(){
-   $('.button').click(function(){
-     $('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> <td class="deleteRow">X</td></tr>')
-     hover()
-     editTable1()
-     $('.deleteRow').css('visibility', 'visible')
-     removeRow()
-   })
- }
+function addStudent(){
+$('.button').click(function(){
+$('table').append('<tr> <td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td><td>New</td> <td class="deleteRow">X</td></tr>')
+hover()
+editTable1()
+$('.deleteRow').css('visibility', 'visible')
+removeRow()
+})
+}
 if (valid) {
 alert ("Login was successful");
 $('.deleteRow').css('visibility', 'visible')
@@ -97,49 +122,43 @@ return false;
 }
 }
 </script>
-
 <form name = "myform">
-<p>ENTER USER NAME <input type="text" name="username"> ENTER PASSWORD <input type="password" name="pword">
+<p>Enter User Name <input type="text" name="username"> Enter Password <input type="password" name="pword">
 <input type="button" value="Log In" name="Submit" onclick= "validate()">
 </p>
-
+<p>Search By First Name <input type="text" name="search"> <input type="button" value="Search" name="searchButton" onclick="searchFunction()"></p>
 </form>
-
-
 <div class="table">
-<table border="1"><div contenteditable="true">
-<tr><th>First Name</th><th>Last Name</th><th>School</th><th>State</th><th>Email</th><th>Grade</th><th>Status</th><th>Amount</th></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
-<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>amount</td><td class="deleteRow">X</td></tr>
+<table id="table1" border="1" class="sortable"><div contenteditable="true">
+  <caption>Click on the table headers to sort</caption>
+<tr><th>First Name</th><th>Last Name</th><th>School</th><th>State</th><th>Email</th><th>Grade</th><th>Status</th><th>Fees</th></tr>
+<tr><td>Austin</td><td>Mahan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>37.12</td><td class="deleteRow">X</td></tr>
+<tr><td>Isa</td><td>Svaldi</td><td>Horizon</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>52.01</td><td class="deleteRow">X</td></tr>
+<tr><td>Robert</td><td>McAuthor</td><td>Horizon</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>0</td><td class="deleteRow">X</td></tr>
+<tr><td>Owen</td><td>Laskey</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>9.36</td><td class="deleteRow">X</td></tr>
+<tr><td>Hunter</td><td>Meer</td><td>Legacy</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>11.92</td><td class="deleteRow">X</td></tr>
+<tr><td>Aiden</td><td>Wahead</td><td>Northglen</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>5.25</td><td class="deleteRow">X</td></tr>
+<tr><td>Alarik</td><td>McDonald</td><td>Windsor</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>29.61</td><td class="deleteRow">X</td></tr>
+<tr><td>Tanner</td><td>Flint</td><td>Cherry Creek</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>3.33</td><td class="deleteRow">X</td></tr>
+<tr><td>Hunter</td><td>Flint</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>1.29</td><td class="deleteRow">X</td></tr>
+<tr><td>Owen</td><td>Shaw</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>4.68</td><td class="deleteRow">X</td></tr>
+<tr><td>Brian</td><td>O'conner</td><td>Legacy</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>124.99</td><td class="deleteRow">X</td></tr>
+<tr><td>Nathen</td><td>Drake</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>14.20</td><td class="deleteRow">X</td></tr>
+<tr><td>Dom</td><td>Torreto</td><td>Horizon</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>18.73</td><td class="deleteRow">X</td></tr>
+<tr><td>Luke</td><td>Skywalker</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>24.30</td><td class="deleteRow">X</td></tr>
+<tr><td>Master</td><td>Cheif</td><td>Horizon</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>16.31</td><td class="deleteRow">X</td></tr>
+<tr><td>Hall</td><td>Jordan</td><td>Mtn. Range</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>0.78</td><td class="deleteRow">X</td></tr>
+<tr><td>Bruce</td><td>Wayne</td><td>Northglen</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>17.95</td><td class="deleteRow">X</td></tr>
+<tr><td>Peter</td><td>Parker</td><td>Northglen</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>18.29</td><td class="deleteRow">X</td></tr>
+<tr><td>Clark</td><td>Kent</td><td>Legacy</td><td>CO</td><td>email</td><td>2015</td><td>active</td><td>0.01</td><td class="deleteRow">X</td></tr>
 </div>
 </table>
-
 </div>
 <div class="box">
 <form>
-
 <br>
-
 </form>
 <br>
-
 <br>
 <br>
 <br>
@@ -148,8 +167,6 @@ return false;
 <p>Add student</p>
 </div>
 </div>
-
-
 
 </body>
 </html>
