@@ -1,56 +1,51 @@
-table{
-text-align: center;
+
+p{
+
+font-family: "courier","times new roman";
+
 }
 
-th {
-background-color: #104E8B;
-color: #FFF;
+h1{
+  text-align: center;
+}
+
+h1,h2,h3{
+
+font-family:"courier";
+text-decoration: underline;
 font-weight: bold;
+
 }
 
-.button{
-  width: 125px;
-  height: 30px;
-  background-color: grey;
-  font-size: 22px;
-  text-align: center;
-  border-radius: 5px;
+
+
+.li-box{
+
+height:10px;
+display: inline-block;
+width:10px;
+
+background-color:black;
+
 }
 
-.button1{
-  width: 125px;
-  height: 30px;
-  background-color: grey;
-  font-size: 22px;
-  text-align: center;
-  border-radius: 5px;
+li{
+  font-family: "courier","times new roman";
 }
 
-.box{
-  float: right;
+.margin{
+  margin-left: 10%;
   margin-right: 10%;
 }
 
-.table{
-  width: 50%;
-  float: left;
+img{
+  margin-top: 3%;
+  margin-left: 37%;
+  height: 25%;
+  width: 25%;
 }
 
-.deleteRow{
-  background-color: red;
-  visibility: hidden;
-}
-
-
-.table .cellEditing input[type=text]{
-  width: 50%;
-  float: left;
-}
-
-.exit{
-  background-color: red;
-}
-
-.ins{
-  
-}
+body{
+   background: url("brickwall.png");
+   font-family: "courier","times new roman";
+ }
