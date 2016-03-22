@@ -1,50 +1,50 @@
-table{
-text-align: center;
-}
+/*table{*/
+/*text-align: center;*/
+/*}*/
 
-th {
-background-color: #104E8B;
-color: #FFF;
-font-weight: bold;
-}
+/*th {*/
+/*background-color: #104E8B;*/
+/*color: #FFF;*/
+/*font-weight: bold;*/
+/*}*/
 
-.button{
-  width: 125px;
-  height: 30px;
-  background-color: grey;
-  font-size: 22px;
-  text-align: center;
-}
+/*.button{*/
+/*  width: 125px;*/
+/*  height: 30px;*/
+/*  background-color: grey;*/
+/*  font-size: 22px;*/
+/*  text-align: center;*/
+/*}*/
 
-.button1{
-  width: 125px;
-  height: 30px;
-  background-color: grey;
-  font-size: 22px;
-  text-align: center;
-}
+/*.button1{*/
+/*  width: 125px;*/
+/*  height: 30px;*/
+/*  background-color: grey;*/
+/*  font-size: 22px;*/
+/*  text-align: center;*/
+/*}*/
 
-.box{
-  float: right;
-  margin-right: 10%;
-}
+/*.box{*/
+/*  float: right;*/
+/*  margin-right: 10%;*/
+/*}*/
 
-.table{
-  width: 50%;
-  float: left;
-}
+/*.table{*/
+/*  width: 50%;*/
+/*  float: left;*/
+/*}*/
 
-.deleteRow{
-  background-color: red;
-  visibility: hidden;
-}
+/*.deleteRow{*/
+/*  background-color: red;*/
+/*  visibility: hidden;*/
+/*}*/
 
 
-.table .cellEditing input[type=text]{
-  width: 50%;
-  float: left;
-}
+/*.table .cellEditing input[type=text]{*/
+/*  width: 50%;*/
+/*  float: left;*/
+/*}*/
 
-.exit{
-  background-color: red;
-}
+/*.exit{*/
+/*  background-color: red;*/
+/*}*/
